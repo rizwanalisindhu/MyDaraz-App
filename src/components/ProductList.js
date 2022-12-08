@@ -1,6 +1,6 @@
 import '../App.css';
 
-function ProductList({ product }) {
+function ProductList({ product, addToCart }) {
     return (
         <div className='flex'>
             {product.map((productItem, productIndex) => {
@@ -12,7 +12,7 @@ function ProductList({ product }) {
                             <p>{productItem.name} | {productItem.category}</p>
                             <p>{productItem.seller}</p>
                             <p>Rs. {productItem.price} /-</p>
-                            <button>Add To Cart</button>
+                            <button className='cartButton' onClick={() => addToCart(productItem)}>Add To Cart</button>
                         </div>
 
                     </div>

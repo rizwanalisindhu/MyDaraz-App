@@ -49,5 +49,22 @@
 }
 
 .product-item{
-  padding: 20px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #eff0ec;
+  border-radius: 10px;
+
+}
+.product-item img{
+  border-radius: 15px;
+}
+.cartButton{
+  padding: 5px 8px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.cartButton:hover{
+  background-color: #f0b64b;
+    transform: scale(0.9);
+  transition-duration: 0.5s;
 }

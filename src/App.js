@@ -50,14 +50,24 @@ function App() {
     },
   ])
 
+  const [cart, setCart] = useState([])
+
+  const addToCart = (data) => {
+    console.log(cart)
+    setCart([...cart, data])
+
+  }
 
 
   return (
-   <div>
-    <Header></Header>
-    <ProductList product={product}></ProductList>
+    <div>
+      <Header></Header>
+      <div style={{margin: '10px 100px'}}>
+        <ProductList product={product} addToCart={addToCart}></ProductList>
 
-   </div>
+      </div>
+
+    </div>
   );
 }
 
