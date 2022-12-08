@@ -68,3 +68,12 @@
     transform: scale(0.9);
   transition-duration: 0.5s;
 }
+
+.cartlist-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 100px;
+  background-color: #eff0ec;
+  border-radius: 10px;
+}
