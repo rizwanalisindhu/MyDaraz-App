@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
+import CartList from './components/CartList';
+
 import { useState } from 'react';
 
 function App() {
@@ -52,18 +54,26 @@ function App() {
 
   const [cart, setCart] = useState([])
 
+  const [showCart, setShowCart] = useState(false)
+
   const addToCart = (data) => {
     console.log(cart)
-    setCart([...cart, data])
-
+    setCart([...cart, { ...data, quantity: 1 }])
   }
-
+  const handleShow = (value) => {
+    setShowCart(value)
+  }
 
   return (
     <div>
-      <Header></Header>
-      <div style={{margin: '10px 100px'}}>
-        <ProductList product={product} addToCart={addToCart}></ProductList>
+      <Header count={cart.length}
+        handleShow={handleShow} ></Header>
+      <div style={{ margin: '10px 10%' }}>
+        {
+          showCart ?
+            <CartList cart={cart}></CartList> :
+            <ProductList product={product} addToCart={addToCart}></ProductList>
+        }
 
       </div>
 
